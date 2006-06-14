@@ -248,6 +248,7 @@ sub command_line
  # force /usr/include to be last element of @include
  push @include, $Config{'usrinc'}
    if (defined $Config{'usrinc'} and $Config{'usrinc'} ne '');
+ push @include, "/usr/include";
  # warn "Include:@include\n";
  while (@files)
   {
