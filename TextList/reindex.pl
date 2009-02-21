@@ -1,4 +1,4 @@
-#!/bin/perl
+#!/usr/bin/perl
 
 use lib qw(/home1/gbartels/textlist);
 use Tk;
