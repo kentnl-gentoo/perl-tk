@@ -15,6 +15,8 @@ $define = '';
 $gccopt = "";
 @macro = ( macro => {} );
 
+$X11=$ENV{X11};
+
 if (defined $Config{'gccversion'})
  {
   $ver = $Config{'gccversion'};
