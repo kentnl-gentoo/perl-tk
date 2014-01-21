@@ -17,10 +17,11 @@ foreach my $file (qw(zlib/Makefile.PL libpng/Makefile.PL))
 
 my $libpng_cflags;
 my $libpng_libs;
-system('pkg-config --exists png');
+system('pkg-config --exists libpng');
 if ($? == 0) {
-    chomp($libpng_cflags = `pkg-config --cflags png`);
-    chomp($libpng_libs   = `pkg-config --libs png`);
+    chomp($libpng_cflags = `pkg-config --cflags libpng`);
+    chomp($libpng_libs   = `pkg-config --libs libpng`);
+    chomp($libpng_libs  .= `pkg-config --libs zlib`);
 } else {
     warn "'pkg-config libpng' failed, continue with fallback values for cflags and libs...\n";
     $libpng_cflags = '-I/usr/local/include';
