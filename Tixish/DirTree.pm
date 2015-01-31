@@ -7,7 +7,7 @@ package Tk::DirTree;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = '4.021';
+$VERSION = '4.022';
 
 use Tk;
 use Tk::Derived;
@@ -181,7 +181,7 @@ sub dirnames {
 	$w->{curr_dir} = delete $args->{-initialdir};
 	if (!defined $w->{curr_dir}) {
 	    require Cwd;
-	    $w->{curr_dir} = Cwd::cwd();
+	    $w->{curr_dir} = Cwd::getcwd();
 	}
 	if (defined $args->{-mustexist}) {
 	    die "-mustexist is not yet implemented";
